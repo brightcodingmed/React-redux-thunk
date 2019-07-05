@@ -9,6 +9,11 @@ export default function(state = initialState, action) {
           ...state,
           todos: action.payload
         };
+      case 'ADD_TODO':
+        return {
+          ...state,
+          todos: [action.payload, ...state.todos]
+        }
       default:
         return state;
     }
